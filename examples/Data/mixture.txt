@@ -1,0 +1,4 @@
+2
+0.0 0.0
+# Simple 3-component mixture
+1.0 - x[0] - x[1] >= 0.0
