@@ -3,6 +3,9 @@ import numpy as np
 import metrosampler.checks as sc
 import metrosampler.sampler as sr
 import metrosampler.posterior as sp
+import matplotlib as mpl
+
+mpl.use('TkAgg')
 import matplotlib.pyplot as plt
 
 

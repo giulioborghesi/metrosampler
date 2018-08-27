@@ -2,6 +2,9 @@ import numpy as np
 import metrosampler.sampler as sr
 import metrosampler.posterior as sp
 import metrosampler.constraints as sc
+import matplotlib as mpl
+
+mpl.use('TkAgg')
 import matplotlib.pyplot as plt
 
 
