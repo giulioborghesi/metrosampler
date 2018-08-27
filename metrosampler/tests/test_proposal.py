@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-import sampler.sampler as sr
+import metrosampler.sampler as sr
 
 
 class TestProposal(object):

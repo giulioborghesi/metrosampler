@@ -19,7 +19,7 @@ def sample_gauss(covariance, samples=1):
     return np.random.multivariate_normal(np.zeros(ndim), covariance, samples)
 
 
-class AdaptiveMetropolisSampler:
+class MetroSampler:
     """
     Generate samples from a distribution using the Metropolis algorithm.
 

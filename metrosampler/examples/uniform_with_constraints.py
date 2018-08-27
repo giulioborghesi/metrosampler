@@ -1,10 +1,7 @@
-import sys
-sys.path.append('../')
-
 import numpy as np
-import sampler.sampler as sr
-import sampler.posterior as sp
-import sampler.constraints as sc
+import metrosampler.sampler as sr
+import metrosampler.posterior as sp
+import metrosampler.constraints as sc
 import matplotlib.pyplot as plt
 
 
@@ -15,10 +12,14 @@ def generate_samples():
     posterior = sp.ConstrainedDistribution(constraints)
     covariance = np.identity(2)
 
+    # Sampler's parameters
+    t0 = 1000
+    tb = 50000
+
     # Generate samples
-    sampler = sr.AdaptiveMetropolisSampler(posterior, posterior.get_example(),
-                                           covariance, 200, 1000, 50000, 0.1)
-    vals, accepted, total = sampler.sample(2000, 100)
+    x0 = posterior.get_example()
+    sampler = sr.MetroSampler(posterior, x0, covariance, 200, t0, tb, 0.1)
+    vals, accepted, total = sampler.sample(4000, 200)
 
     # Generate scatter plot
     plt.scatter(vals[:, 0], vals[:, 1], s = 0.2)

@@ -1,7 +1,7 @@
 import pytest
 import numpy as np
 import helpers as hp
-import sampler.posterior as sp
+import metrosampler.posterior as sp
 
 
 class TestPosterior(object):

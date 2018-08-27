@@ -1,7 +1,7 @@
 import numpy as np
 import helpers as hs
-import sampler.sampler as sr
-import sampler.posterior as pr
+import metrosampler.sampler as sr
+import metrosampler.posterior as pr
 
 
 class TestSampler(object):
@@ -13,7 +13,7 @@ class TestSampler(object):
 
         x = distribution.get_example()
         cov = np.identity(2)
-        sampler = sr.AdaptiveMetropolisSampler(distribution, x, cov, 0, 0, 0)
+        sampler = sr.MetroSampler(distribution, x, cov, 0, 0, 0)
 
         samples, _, _ = sampler.sample(200, 1)
         samples = np.append(samples[:-1], x.reshape(1, len(x)), 0)
@@ -29,7 +29,7 @@ class TestSampler(object):
 
         x = distribution.get_example()
         cov = np.identity(2)
-        sampler = sr.AdaptiveMetropolisSampler(distribution, x, cov, 0, 0, 0)
+        sampler = sr.MetroSampler(distribution, x, cov, 0, 0, 0)
 
         samples, _, _ = sampler.sample(200, 1)
         samples = np.append(samples[:-1], x.reshape(1, len(x)), 0)

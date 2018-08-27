@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-import sampler.checks as checks
+import metrosampler.checks as checks
 
 
 class TestChecks():

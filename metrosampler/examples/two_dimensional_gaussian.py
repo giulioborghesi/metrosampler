@@ -1,11 +1,8 @@
-import sys
 import math
-sys.path.append('../')
-
 import numpy as np
-import sampler.checks as sc
-import sampler.sampler as sr
-import sampler.posterior as sp
+import metrosampler.checks as sc
+import metrosampler.sampler as sr
+import metrosampler.posterior as sp
 import matplotlib.pyplot as plt
 
 
@@ -34,9 +31,13 @@ def generate_samples():
     posterior = TwoDimensionalGaussian()
     covariance = np.identity(2)
 
+    # Samplers parameter
+    t0 = 1000
+    tb = 50000
+
     # Generate samples
-    sampler = sr.AdaptiveMetropolisSampler(posterior, posterior.get_example(),
-                                           covariance, 200, 1000, 50000, 0.1)
+    x0 = posterior.get_example()
+    sampler = sr.MetroSampler(posterior, x0, covariance, 200, t0, tb, 0.1)
     vals, _, _ = sampler.sample(10000, 100)
 
     # Generate scatter plot
