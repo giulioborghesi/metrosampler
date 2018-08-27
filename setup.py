@@ -12,7 +12,7 @@ setup(name='metrosampler',
       install_requires=['numpy', 'scipy', 'matplotlib'],
       entry_points = {
           'console_scripts': [
-              'metrosampler = scripts.gendist:gendist'
+              'sampler = scripts.gendist:gendist'
           ]
       },
       setup_requires=['pytest_runner'],
