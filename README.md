@@ -1,4 +1,6 @@
-# metrosampler
+# metrosampler 
+[![Build Status](https://travis-ci.org/giulioborghesi/Adaptive-Metropolis-Sampler.svg?branch=master)](https://travis-ci.org/giulioborghesi/Adaptive-Metropolis-Sampler)
+
 An adaptive implementation of the Metropolis algorithm to sample distributions in high-dimensional space
 
 ## Description
