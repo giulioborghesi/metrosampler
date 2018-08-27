@@ -8,7 +8,7 @@ This repository provides a Python implementation of the adaptive Metropolis algo
 
 The sampling algorithm is implemented by class `MetroSampler`. This class provides a minimal API with a single method, `sample`, which takes 
 as arguments the number of samples to generate and the number of steps by which the Markov chain is advanced before generating a sample. 
-A minimal usage examples is provided below:
+A minimal usage example is provided below:
 
     sampler = sr.MetroSampler(posterior, x0, covariance)
     vals, accepted, total = sampler.sample(2000, 100)
