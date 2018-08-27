@@ -20,7 +20,7 @@ Markovian: for simplicitly, however, this technical detail will be ignored in th
 To create instances of `MetroSampler`, the sampling distribution must be specified, as well as the state from which the Markov process is 
 started and the covariance matrix for the multivariate Gaussian distribution used internally to generate the next states in the process. 
 The sampling distribution must be an object of a class that implements the interface defined by the abstract class `Distribution`, whose 
-definition can be found in [sampler/posterior.py](http://github.com/giulioborghesi/metrosampler/metrosampler/posterior.py).
+definition can be found in [sampler/posterior.py](https://github.com/giulioborghesi/metrosampler/blob/master/metrosampler/posterior.py).
 
 ## Installation
 
