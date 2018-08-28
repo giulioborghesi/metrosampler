@@ -9,6 +9,7 @@ class Distribution:
         pass
 
     def get_example(self):
+        """Return a state vector with non-zero probability."""
         raise NotImplementedError('Abstract method to be implemented')
 
     def eval(self, x):
