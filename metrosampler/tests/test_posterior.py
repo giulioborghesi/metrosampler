@@ -16,8 +16,8 @@ class TestPosterior(object):
         assert x[0] == .2
         assert x[1] == .5
 
-    def test_eval_valid_x_size_unfeasible(self):
-        """Test eval method with an unfeasible state."""
+    def test_prob_valid_x_size_unfeasible(self):
+        """Test prob method with an unfeasible state."""
         constraints = hp.MockedConstraints()
         distribution = sp.ConstrainedDistribution(constraints)
 
@@ -26,8 +26,8 @@ class TestPosterior(object):
 
         assert abs(valid-0.0) <= 1.0e-5
 
-    def test_eval_valid_x_size_feasible(self):
-        """Test eval method with a feasible state."""
+    def test_prob_valid_x_size_feasible(self):
+        """Test prob method with a feasible state."""
         constraints = hp.MockedConstraints()
         distribution = sp.ConstrainedDistribution(constraints)
 
@@ -36,8 +36,8 @@ class TestPosterior(object):
 
         assert abs(valid-1.0) <= 1.0e-5
 
-    def test_eval_invalid_x(self):
-        """Test eval method with a state of incompatible size."""
+    def test_prob_invalid_x(self):
+        """Test prob method with a state of incompatible size."""
         constraints = hp.MockedConstraints()
         distribution = sp.ConstrainedDistribution(constraints)
 
