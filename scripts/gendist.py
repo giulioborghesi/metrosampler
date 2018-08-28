@@ -95,7 +95,7 @@ def gendist():
     # Start sampling
     print '\nThe optimal step size is gamma = %f' % gamma, '. Start sampling...'
     sampler = samp.MetroSampler(posterior, x0, cov0, 200, t0, tb*5, gamma) 
-    vals, accepted, total = sampler.sample(args.samples, 100)
+    vals, accepted, total = sampler.sample(args.samples, 200)
 
     # Store samples to file
     print 'Sampling completed. The number of accepted and total ' \
