@@ -21,6 +21,8 @@ def adjust_gamma(ratio, gamma):
         gamma *= 0.10
     elif ratio < 0.10:
         gamma *= 0.15
+    elif ratio < 0.17:
+        gamma *= 0.35
     elif ratio < 0.20:
         gamma *= 0.5
     elif ratio > 0.95:
@@ -76,12 +78,12 @@ def gendist():
     t0 = 1000 
     tb = 10000
     ratio = .0
-    gamma = .001
+    gamma = .1
     steps = 0
 
     # Tune the sampler step size
     print "Adjusting the step size...\n"
-    while steps < 5 and (ratio < .20 or ratio > .35):
+    while steps < 8 and (ratio < .20 or ratio > .35):
          sampler = samp.MetroSampler(posterior, x0, cov0, 200, t0, tb, gamma)
          vals, accepted, total = sampler.sample(2000, 10)
          print 'With gamma = %f, the number of accepted and total ' \
