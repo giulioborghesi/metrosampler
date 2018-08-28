@@ -54,7 +54,7 @@ class MetroSampler:
         self.covariance = covariance_initial
 
         self.x_last = x_initial
-        self.x_last_probability = posterior.eval(x_initial)
+        self.x_last_probability = posterior.prob(x_initial)
         self.x_mean = np.zeros(x_initial.shape)
         self.x_covariance = np.zeros(covariance_initial.shape)
 
@@ -112,7 +112,7 @@ class MetroSampler:
 
         self.niter += 1
         x_candidate = self._generate_candidate()
-        x_candidate_probability = self.posterior.eval(x_candidate)
+        x_candidate_probability = self.posterior.prob(x_candidate)
 
         cutoff = np.random.random()
         ratio = x_candidate_probability / self.x_last_probability

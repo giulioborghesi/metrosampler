@@ -12,7 +12,7 @@ class Distribution:
         """Return a state vector with non-zero probability."""
         raise NotImplementedError('Abstract method to be implemented')
 
-    def eval(self, x):
+    def prob(self, x):
         """
         Evaluate the probability density of a state.
 
@@ -39,7 +39,7 @@ class ConstrainedDistribution(Distribution):
         """Return a feasible state of the distribution."""
         return np.array(self.constraints.get_example())
 
-    def eval(self, x):
+    def prob(self, x):
         """
         Evaluate whether the input state is in the feasible region or not.
 

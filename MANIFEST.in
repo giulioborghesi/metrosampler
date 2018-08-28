@@ -1,2 +1,4 @@
 include README.md
 include metrosampler/examples/Data/mixture.txt
+include metrosampler/tests/Data/alloy.txt
+include metrosampler/tests/Data/alloy_samples.txt

@@ -19,7 +19,7 @@ class TwoDimensionalGaussian(sp.Distribution):
     def get_example(self):
         return np.array([.2, .1])
 
-    def eval(self, x):
+    def prob(self, x):
         # Input must be valid
         sc.check_vector_validity(x)
         sc.check_vector_size(x, self.ndim)
