@@ -100,5 +100,5 @@ def gendist():
     # Store samples to file
     print 'Sampling completed. The number of accepted and total ' \
           'samples is: %d %d' % (accepted, total), '. Storing data to file..'
-    np.savetxt(args.outfile, vals, delimiter='  ',fmt='%1.4e')
+    np.savetxt(args.outfile, vals, delimiter=' ', fmt='%1.4e')
 
