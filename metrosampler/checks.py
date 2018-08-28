@@ -32,6 +32,9 @@ def check_matrix_validity(x_matrix):
         raise ValueError('Error: input is not a matrix')
 
     if x_matrix.shape[0] != x_matrix.shape[1]:
+        raise ValueError('Error: input is not a square matrix')
+
+    if not np.allclose(x_matrix, x_matrix.T, atol=1.0e-6):
         raise ValueError('Error: input is not a symmetric matrix')
 
 

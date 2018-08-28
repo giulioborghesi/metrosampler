@@ -47,7 +47,33 @@ class TestSampler(object):
         assert abs(x_covariance[1, 1] - sampler.x_covariance[1, 1]) <= 1.0e-5
         assert abs(x_covariance[0, 1] - sampler.x_covariance[0, 1]) <= 1.0e-5
 
+    def test_update_covariance(self):
+        """Check proposal covariance is updated."""
+        constraints = hs.MockedConstraints()
+        distribution = pr.ConstrainedDistribution(constraints)
 
+        x = distribution.get_example()
+        cov = np.identity(2)
+        sampler = sr.MetroSampler(distribution, x, cov, 200, 0, 0)
 
+        samples, _, _ = sampler.sample(200, 1)
+        samples = np.append(samples[:-1], x.reshape(1, len(x)), 0)
 
+        x_mean = np.mean(samples, 0)
+        x2_sum = np.zeros(cov.shape)
+        for val in samples:
+            x2_sum += np.outer(val, val)
+
+        nlen = samples.shape[0]
+        fact = float(nlen - 1.0)
+        x_covariance = (x2_sum - float(nlen) * np.outer(x_mean, x_mean)) / fact
+
+        sd = sampler.sd
+        eps = sampler.eps
+        delta = sd * eps * np.identity(x_covariance.shape[0])
+        covariance = sd * x_covariance + delta
+
+        assert (abs(covariance[0, 0] - sampler.covariance[0, 0])) <= 1.0e-5
+        assert (abs(covariance[1, 0] - sampler.covariance[1, 0])) <= 1.0e-5
+        assert (abs(covariance[1, 1] - sampler.covariance[1, 1])) <= 1.0e-5
 

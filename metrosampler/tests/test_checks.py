@@ -24,6 +24,11 @@ class TestChecks():
         with pytest.raises(ValueError):
             checks.check_matrix_validity(mat)
 
+    def test_matrix_validity_not_symmetric(self):
+        mat = [[i, j] for i in range(5) for j in range(5)]
+        with pytest.raises(ValueError):
+            checks.check_matrix_validity(mat)
+
     def test_matrix_validity_not_matrix(self):
         mat = np.array([i for i in range(5)])
         with pytest.raises(ValueError):
