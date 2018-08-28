@@ -9,7 +9,7 @@ setup(name='metrosampler',
       author_email='giulio.borghesi.1981@gmail.com',
       license='MIT',
       packages=find_packages(),
-      install_requires=['numpy', 'scipy', 'matplotlib <= 1.5.0', 'pytest'],
+      install_requires=['numpy', 'scipy', 'matplotlib <= 2.2.3', 'pytest'],
       entry_points = {
           'console_scripts': [
               'sampler = scripts.gendist:gendist'
