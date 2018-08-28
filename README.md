@@ -34,5 +34,5 @@ MetroSampler can be installed using `pip` after having cloned the repository to 
 
 ## Dependencies
 
-MetroSampler is tested on Python 2.7 and depends on NumPy, SciPy, and MatplotLib (see requirements.txt for version information).
+MetroSampler is tested on Python 2.7 and depends on NumPy, SciPy, pytest and MatplotLib (see requirements.txt for version information).
 
